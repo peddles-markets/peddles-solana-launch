@@ -1,0 +1,23 @@
+[workspace]
+members = ["programs/*", "crates/*"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "UNLICENSED"
+
+# Same release profile Meteora's DAMM v2 ships with (Cargo.toml at commit 3493cd6): overflow-checks
+# stays ON in release, so a wrapped integer aborts the transaction rather than moving money.
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+
+[profile.release.build-override]
+opt-level = 3
+incremental = false
+codegen-units = 1
+
+# What `solana-verify build` reads to pick its image: solanafoundation/solana-verifiable-build:4.1.2.
+[workspace.metadata.cli]
+solana = "4.1.2"

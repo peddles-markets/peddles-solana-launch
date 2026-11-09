@@ -1,0 +1,13 @@
+[package]
+name = "peddles-fees"
+version = "0.1.0"
+description = "All of the Peddles Solana launch arithmetic: pure, no_std, no dependencies"
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[lib]
+name = "peddles_fees"
+
+# Deliberately empty: this crate must be testable without a validator, an SDK or a network.
+[dependencies]

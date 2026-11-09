@@ -1,0 +1,4 @@
+# Host toolchain for `cargo test`. Rust 1.95.0 is what platform-tools v1.57 ships for the SBF build
+# (release notes, read 2026-11-06) and what Meteora's damm-v2 pins. See README.md, "Versions".
+[toolchain]
+channel = "1.95.0"
